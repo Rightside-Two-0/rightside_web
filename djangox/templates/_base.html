@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>{% block title %}Rightside{% endblock title %}</title>
+<meta name="description" content="A framework for launching new Django projects quickly.">
+<meta name="author" content="Philip Caputo: Two.0">
+
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+<script src="https://kit.fontawesome.com/0e185c7aa2.js" crossorigin="anonymous"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+{% block css %}
+<link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/jumbotron/">
+
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+<style>
+body {
+  background-color: #666666;
+}
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  #signup_btn{
+    margin-left: 10px;
+  }
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-4">
+      <a class="navbar-brand" href="{% url 'home' %}">Rightside</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <a class="btn btn-outline-primary nav-link mr-2" href="{% url 'about' %}">About</a>
+        <a class="btn btn-outline-primary nav-link mr-2" href="{%url 'blockchain'%}">Blockchain </a>
+        <a class="btn btn-outline-primary nav-link mr-2" href="{%url 'dashboard'%}" tabindex="-1" aria-disabled="true">Financial Statements</a>
+        <a class="btn btn-outline-primary nav-link mr-2" href="#">Free Skills!</a>
+        <a class="btn btn-outline-success nav-link dropdown-toggle mr-2" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">12-Steps<span class="sr-only">(current)</span></a>
+        <div class="nav-item dropdown">
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="{%url 'block_one'%}">Step <span class="badge badge-success">1</span>: Job (Skills)</a>
+            <a class="dropdown-item" href="#">Step 2: Savings (Your worth it)</a>
+            <a class="dropdown-item" href="#">Step 3: Golg/Silver/Bitcoin</a>
+            <a class="dropdown-item" href="#">Step 4: Stocks/Bonds</a>
+            <a class="dropdown-item" href="#">Step 5: Options/Derivatives</a>
+            <a class="dropdown-item" href="#">Step 6: Payoff Highest Interest CC</a>
+            <a class="dropdown-item" href="#">Step 7: Payoff House in 15 years</a>
+            <a class="dropdown-item" href="#">Step 8: Credit Scores</a>
+            <a class="dropdown-item" href="#">Step 9: Business (Passion)</a>
+            <a class="dropdown-item" href="#">Step 10: Analyze Investment Property</a>
+            <a class="dropdown-item" href="#">Step 11: Entities & Taxes</a>
+            <a class="dropdown-item" href="#">Step 12: Philanthropy</a>
+          </div>
+        </div>
+        {% if user.is_authenticated %}
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mr-2">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.email }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                <a class="dropdown-item" href="{% url 'account_change_password' %}">Change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>
+              </div>
+            </li>
+          </ul>
+        {% else %}
+          <form class="form-inline ml-auto">
+            <a href="{% url 'account_login' %}" class="btn btn-outline-secondary">Log in</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-primary ml-2">Sign up</a>
+          </form>
+        {% endif %}
+      </div>
+    </nav>
+
+  <div class="container">
+  {% block content %}
+
+  {% endblock content %}
+  </div>
+
+
+  <nav class="navbar fixed-bottom navbar-dark bg-dark">
+
+    <a class="btn btn-outline-success" href="https://www.bizbuysell.com/businesses-for-sale/?q=aXI9MSZrPVNlbGxlcitGaW5hbmNpbmcmbj0mc3BpZD0z" target="_blank">Opportunities</a>
+
+  {% if user.is_authenticated %}
+  <div class="col-sm-6 text-white">
+    Cashflow: $...
+  </div>
+    <ul class="col-sm-2 navbar-nav">
+      <li class="nav-item">
+        <div class="progress">
+         <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+       </div>
+      </li>
+    </ul>
+  {% endif %}
+  <div class="text-right">
+    <a class="navbar-brand text-white">Network: {value}</a>
+    <a class="navbar-brand" href="{%url 'home'%}">&copy; Rightside 2020</a>
+  </div>
+</nav>
+
+  {% block javascript %}
+  <!-- Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <!-- 3rd party JavaScript -->
+
+  <!-- Project JS -->
+  <script src="{% static 'js/base.js' %}"></script>
+
+  {% endblock javascript %}
+
+</body>
+</html>

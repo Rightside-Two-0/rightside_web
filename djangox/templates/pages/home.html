@@ -1,0 +1,84 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Rightside{% endblock title %}
+
+{% block content %}
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron bg-secondary">
+    <div class="container text-white">
+      <h1 class="display-3">There is a right side</h1>
+      <p>There is a right side to money.  You can prove this to yourself simply by noticing
+        that you have probably been, in most cases, on the wrong side.</p>
+        <hr/>
+        <div class="">
+          <blockquote cite="[Hill, N. (2008). Think and grow rich: the complete classic text. New York: Jeremy P. Tarcher/Penguin. (Pg 28)]">
+            "To the uninitiated, who has not been schooled in the working principles of the human mind, these instructions may appear impractical."<br/>
+            -- Napoleon Hill, 1937
+          </blockquote>
+        </div>
+      <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'about'%}" role="button">Learn more &raquo;</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <p class="text-center text-white">There is never any fee & it is always free!  If you want to donate however, it is a great tax deduction.</p>
+  </div>
+
+  <div class="container text-white">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm bg-dark">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Free</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Two Free mentors</li>
+            <li>Free financial statements</li>
+            <li>12 Steps of income</li>
+            <li>Email support</li>
+            <li>Help center access</li>
+          </ul>
+            <button type="button" onclick="location.href='{% url 'account_signup' %}'" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm bg-dark">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Committed</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$49 <small class="text-muted">/ mo</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Five Free mentors</li>
+            <li>Free financial statements</li>
+            <li>12 Steps of income</li>
+            <li>
+              <p>Donate on a consistent monthly basis to help make a difference in our community.</p>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">Get committed</button>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm bg-dark">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Obsessed</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$99 <small class="text-muted">/ mo</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li><strong>Unlimited</strong> Free mentors</li>
+            <li>Free financial statements</li>
+            <li>12 Steps of income</li>
+            <li>
+              <p> Rightside is a 501(C)-3 tax-except non-profit foundation.  Our EIN: 00-00000                                                                                                           </p>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">Get obsessed</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

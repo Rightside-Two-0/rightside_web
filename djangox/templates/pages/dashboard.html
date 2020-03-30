@@ -1,0 +1,110 @@
+{% extends '_base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container text-white">
+  <div class="card-deck col-md-6">
+    <div class="card mb-3 shadow-sm bg-dark">
+      <div class="card-header text-center">
+        <h4 class="my-0 font-weight-normal">Income</h4>
+      </div>
+      <div class="card-body text-left pl-5 pr-5">
+        <ul class="list-unstyled mb-3">
+          <li>
+            <blockquote cite="https://www.brainyquote.com/quotes/robert_kiyosaki_626885">
+              The richest people in the world look for and build networks; everyone else looks for work.
+              <br>
+              -- Robery Kiyiosaki
+            </blockquote>
+          </li>
+            <!-- <ul class="list-unstyled mt-3 mb-3 ml-5">
+              <li>RE #1:</li>
+              <li>RE #2:</li>
+              <li>RE #3:</li>
+            </ul> -->
+        </ul>
+          <button type="button" onclick="location.href='{% url 'account_signup' %}'" class="btn btn-lg btn-block btn-outline-primary">
+            <h3 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h3>
+          </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-deck col-md-6">
+    <div class="card mb-3 shadow-sm bg-dark">
+      <div class="card-header text-center">
+        <h4 class="my-0 font-weight-normal">Expenses</h4>
+      </div>
+      <div class="card-body text-left pl-5 pr-5">
+        <ul class="list-unstyled mt-1 mb-3">
+          <li>
+            <blockquote cite="https://www.brainyquote.com/quotes/benjamin_franklin_135836">
+              Beware of little expenses.  A small leak will sink a great ship.
+              <br>
+              -- Benjamin Frankflin
+            </blockquote>
+          </li>
+          <!-- <li>Mortgage/Rent:</li>
+          <li>Utilities:</li>
+          <li>Insurances:</li>
+          <li>Vehicle(s):</li>
+          <li>Groceries/Food:</li>
+          <li>Entertainment:</li>
+          <li>Medical:</li>
+          <li>Clothing:</li>
+          <li>Credit Cards:</li>
+          <li>Other:</li> -->
+        </ul>
+          <button type="button" onclick="location.href='{% url 'account_signup' %}'" class="btn btn-outline-warning btn-lg btn-block btn-outline-primary">
+            <h3 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h3>
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container text-white">
+  <div class="card-deck col-md-12">
+    <div class="card mb-3 shadow-sm bg-dark">
+      <div class="card-header text-center">
+        <h4 class="my-0 font-weight-normal">Assets</h4>
+      </div>
+      <div class="card-body text-left pl-5 pr-5">
+        <ul class="list-unstyled mt-1 mb-3">
+          <li>
+            <blockquote cite="https://www.brainyquote.com/quotes/zig_ziglar_617803">
+              Honesty and integrity are by far the most important assets of an entrepreneur.
+              <br>
+              -- Zig Ziglar
+            </blockquote>
+          </li>
+        </ul>
+          <button type="button" onclick="location.href='{% url 'account_signup' %}'" class="btn btn-outline-success btn-lg btn-block btn-outline-primary">
+            <h3 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h3>
+          </button>
+      </div>
+    </div>
+    <div class="card mb-3 shadow-sm bg-dark">
+      <div class="card-header text-center">
+        <h4 class="my-0 font-weight-normal">Liabilities</h4>
+      </div>
+      <div class="card-body text-left pl-5 pr-5">
+        <ul class="list-unstyled mt-1 mb-3">
+        <li>
+          <blockquote cite="Grant Cardone">
+            I love my debt about as much as my wife and kids, because it pays me income.
+            <br>
+            -- Grant Cardone
+          </blockquote>
+        </li>
+        </ul>
+          <button type="button" onclick="location.href='{% url 'account_signup' %}'" class="btn btn-outline-danger btn-lg btn-block btn-outline-primary">
+            <h3 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h3>
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,295 @@
+{%extends '_base.html'%}
+{%load static%}
+{%block content%}
+<link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/product/">
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-primary">
+  <div class="col-md-8 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Genesis</h1>
+    <p class="lead font-weight-normal">All wealth & prosperity invariably starts & ends with income, and yet, they have nothing to do with it. -- Two.0</p>
+    <a class="btn btn-outline-secondary text-dark"  target="_blank" href="https://roblewis.com/wp-content/uploads/Think-And-Grow-Rich_2008-10.pdf"><img src="{%static 'images/book-3x.png'%}"/>Think & Grow Rich</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <form class="pt-3" action="" method="post">
+      {%csrf_token%}
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 py-3">
+      <h2 class="display-5">Goal:</h2>
+      <p class="lead">To get employed producing income for yourself.</p>
+    </div>
+    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+
+      <label class="text-dark" for="goal">What are you currently earning before taxes?</label>
+      <input class="rounded col-5" type="text" name="self_worth" value="" placeholder="">
+    </div>
+  </form>
+    <div class="container">
+      <div class="">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+  <form class="pt-3" action="" method="post">
+    {%csrf_token%}
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 p-3">
+      <h2 class="display-5">Attitude:</h2>
+      <p class="lead">Helping others with a grateful & understanding perspective.</p>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+    <label class="text-white" for="goal">How do you feel about the topic of money?</label>
+    <textarea class="rounded col-8" type="text" name="love_to_do" value="" placeholder="Money makes me feel"></textarea>
+
+    </div>
+  </form>
+    <div class="container">
+      <div class="">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <form class="pt-3" action="" method="post">
+      {%csrf_token%}
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 p-3">
+      <h2 class="display-5">What do you love to do?</h2>
+      <p class="lead">If there was no concern for compensation, what would you do with your time?</p>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <input class="rounded col-5 mt-4" type="text" name="goal" value="" placeholder="I love">
+
+    </div>
+  </form>
+    <div class="container">
+      <div class="">
+
+      </div>
+    </div>
+  </div>
+  <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <form class="pt-3" action="" method="post">
+      {%csrf_token%}
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 py-3">
+      <h2 class="display-5">Find something that you love learning about.</h2>
+      <p class="lead">When you are involved in something with your heart & spirit, you
+      never even notice the time.</p>
+    </div>
+    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <textarea class="rounded col-8 mt-4" type="text" name="goal" value="" placeholder="I love learning about..."></textarea>
+    </div>
+  </form>
+    <div class="container">
+      <div class="">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <form class="pt-3" action="" method="post">
+      {%csrf_token%}
+      <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 p-3">
+      <h2 class="display-5">"You are the Master of your Fate and the Captain of your Soul"</h2>
+      <blockquote class="lead" cite="[]">
+        I am the Master of my Fate, I am the Captain of my Soul, becuase we have the power to control our thoughs.
+        [...] That the ether in which we move and have our being, is a form of energy moving at an inconveivably high
+        rate of vibration, and that the ether is filled with a form of Universal power which adapts itself to the nature
+        of the thoughts we hold in our minds; and influences us in natural ways, to transmute our thoughts into their physical equivalent.
+        <br>
+        -- Napoleon Hill 1937
+      </blockquote>
+    </div>
+    <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <textarea class="rounded col-8 mt-4" rows="5" name="soul_captian" placeholder="What does this above quote mean to you?"></textarea>
+    </div>
+  </form>
+    <div class="container">
+      <div class="">
+
+      </div>
+    </div>
+  </div>
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden col-6">
+    <form class="pt-3" action="" method="post">
+      {%csrf_token%}
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 py-3">
+      <h2 class="display-5">6 Definite practical steps, viz:</h2>
+      <p class="lead">
+        First: Fix in your mind the exact amount of money youd desire.<br>
+        Second: Determine exactly what you intend to give in return for the money you desire.<br>
+        Third: Establish a definite date when you will <em>possess</em> the money you desire.<br>
+        Fourth: Create a definite plan for carrying out your desire and begin <em>at once</em>, whether
+        you are ready or not to put this plan into <em>action</em>.<br>
+        Fifth: Write out a clear, concise statement of the amount of money you intend to acquire,
+        name the time limit for its acquisition, state what you intend to give in return for the money,
+        and describe clearly the plan through which you intend to accumulate it.<br>
+        Sixth: Read your written statement aloud, twice daily, once just before retiring at night,
+        and once after arising in the morning.  As you read --see and <em>feel</em> and believe yourself
+         already in possession of the money.
+      </p>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <textarea name="fifth_step" class="rounded col-8 mt-4" rows="5" placeholder="Give it some thought, and then write out a step 5."></textarea>
+    </div>
+  </form>
+    <div class="container">
+      <div class="">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden col-6">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 p-3">
+      <h2 class="display-5">To the uninitiated, who has not been schooled in the working
+      principles of the human mind, these instructions may appear impractical.</h2>
+      <p class="lead">But the successful application of these six steps does call for
+      sufficient <em>imagination</em> to enable one to see, and to understand that accumulation of
+      money cannot be left to chance, good fortune, and luck.
+      </p>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <textarea name="ideal_scence" class="rounded col-8 mt-4" rows="5" placeholder="Describe clearly, your ideal scene.  Perhaps in 5 years say."></textarea>
+    </div>
+  </div>
+  <div class="bg-dark text-white mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 py-3">
+      <h2 class="display-5">Have faith in yourself; have faith in the Infinite.</h2>
+      <p class="lead">Thoughts which are mixed with any of the feelings of emotions consitute a
+      "magnetic" force which attracts, from the vibrations of the ether, other similiar or
+      related thoughts.  A thought thus "magnetized" with emotion may be compared to a seed which,
+     when planted in fertile soil, germinates, grows, and mulitplies itself over and over agian, until that
+    which was originally one small seed becomes countless millions of seeds of the same brand!</p>
+    </div>
+    <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <textarea name="fifth_step" class="rounded col-8 mt-4" rows="5" placeholder="What are you going to focus on with laser-like intent?"></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 p-3">
+      <h2 class="display-5">The ether is a great cosmic mass of eternal forces of vibration.</h2>
+      <p class="lead">
+        From the great storehouse of the ether, the humand mind is constantly attracting vibrations
+         which harmonize with that which dominates the human mind.  Any thought, idea, plan,
+         or purpose which one <em>holds</em> in one's mind attracts, from the vibrations of the ether,
+         a host of its relatives, adds these "relatives" to its own force, and grows until it becomes
+          the dominating, motivating master of the indvidual in whose mind it has been housed.
+      </p>
+    </div>
+    <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <textarea name="pull_thought" class="rounded col-8 mt-4" rows="5" placeholder="If you could pull any thought or idea to you right now from the ether, what would that be?"></textarea>
+    </div>
+  </div>
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          <span class="badge"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+       </button>
+      </div>
+      <small class="text-muted">9 mins</small>
+    </div>
+    <div class="my-3 py-3">
+      <h2 class="display-5">Resolve to throw off influences of any unfortunate enviornment,
+       and to build your own life to order.</h2>
+      <p class="lead">
+        Taking inventory of mental assets and liabilities, you will discover that your greatest
+        weakness is lack of self-confidence.  This handicap can be surmounted, and timity translated
+         into courage, through the aid of the principle of auto-suggestion. [...]
+         Like the wind whch carries one ship East, and another West, the law of auto-suggestion will lift you up
+          or pull you down, according to the way you have set your sails of thought.
+      </div>
+    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      <textarea name="go_where" class="rounded col-8 mt-4" rows="5" placeholder="If you could travel to any one place in the whole world, where would that be and why?"></textarea>
+    </div>
+  </div>
+</div>
+
+{%endblock content%}

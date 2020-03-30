@@ -1,0 +1,193 @@
+{%extends '_base.html'%}
+{%load static%}
+{% block content%}
+<br>
+<br>
+<br>
+<h1 class="text-white text-center mb-4">Your data is cryptographically secured on <em>your</em> network</h1>
+<form class="form-inline" action="{%url 'sign_Transaction'%}" method="post">
+  {%csrf_token%}
+  <label class="sr-only" for="datepicker">Date</label>
+  <div class="input-group mb-2 mr-sm-2 col-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 12h-3c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1zm0-10v1H8V2c0-.55-.45-1-1-1s-1 .45-1 1v1H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm2 17H6c-.55 0-1-.45-1-1V8h14v10c0 .55-.45 1-1 1z"/></svg>
+      </div>
+    </div>
+      <input name="date" type="date" class="form-control" id="datepicker" placeholder="date"/>
+  </div>
+
+  <label class="sr-only" for="inlineFormInputName2">tbody</label>
+  <div class="input-group mb-2 mr-sm-2 col-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM6 7h5v1.5H6V7zm13 12H5L19 5v14zm-4.5-3v2H16v-2h2v-1.5h-2v-2h-1.5v2h-2V16z"/></svg></div>
+    </div>
+    <input type="text" name="from_account" class="form-control" id="inlineFormInputName2" placeholder="account">
+  </div>
+
+  <label class="sr-only" for="inlineFormInputGroupUsername2">tbody</label>
+  <div class="input-group mb-2 mr-sm-2 col-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0zm0 0h24v24H0z" fill="none"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5.5 7.5h2v-2H9v2h2V9H9v2H7.5V9h-2V7.5zM19 19H5L19 5v14zm-2-2v-1.5h-5V17h5z"/></svg></div>
+    </div>
+    <input type="text" class="form-control" name="to_account" id="inlineFormInputGroupUsername2" placeholder="account">
+  </div>
+
+  <label class="sr-only" for="inlineFormInputGroupUsername3">tbody</label>
+  <div class="input-group mb-2 mr-sm-2 col-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/><path d="M0 0h24v24H0z" fill="none"/></svg></div>
+    </div>
+    <input type="text" class="form-control" name="amount" id="inlineFormInputGroupUsername3" placeholder="amount">
+  </div>
+
+  <label class="sr-only" for="inlineFormInputGroupUsername4">tbody</label>
+  <div class="input-group mb-2 mr-sm-2 col-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+    </div>
+    <input type="text" name="notes" class="form-control" id="inlineFormInputGroupUsername4" placeholder="details">
+  </div>
+
+<!-- <a href="https://icons8.com/icon/101787/fingerprint">Fingerprint icon by Icons8</a> :opensource non-profit-->
+  <button type="submit" class="btn btn-primary mb-2 pl-3"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/><svg class="ml-2"xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></button>
+</form>
+<br>
+{{fingerprint}}<span class="badge badge-success"><img src="https://img.icons8.com/offices/30/000000/fingerprint.png"/></span>
+<br>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 12h-3c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1zm0-10v1H8V2c0-.55-.45-1-1-1s-1 .45-1 1v1H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm2 17H6c-.55 0-1-.45-1-1V8h14v10c0 .55-.45 1-1 1z"/></svg></th>
+      <th scope="col"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM6 7h5v1.5H6V7zm13 12H5L19 5v14zm-4.5-3v2H16v-2h2v-1.5h-2v-2h-1.5v2h-2V16z"/></svg></th>
+      <th scope="col"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0zm0 0h24v24H0z" fill="none"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5.5 7.5h2v-2H9v2h2V9H9v2H7.5V9h-2V7.5zM19 19H5L19 5v14zm-2-2v-1.5h-5V17h5z"/></svg></th>
+      <th scope="col"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/><path d="M0 0h24v24H0z" fill="none"/></svg></th>
+        <th scope="col"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td> 1</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="album py-5 bg-light">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+               <img class="card-img-top" src="{%static 'images/blocks.jpeg'%}" alt="Card image cap">
+              <div class="card-body">
+                 <p class="card-text">Genesis Block: Get a job.  Helping someone accomplish their goals is the quickest way to an income.</p>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+                     <button type="button" class="btn btn-sm btn-outline-secondary"> <svg class="bi bi-file-earmark-arrow-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 1h5v1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6h1v7a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2z"/>
+                        <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 019 4.5z"/>
+                        <path fill-rule="evenodd" d="M5.646 8.854a.5.5 0 00.708 0L8 7.207l1.646 1.647a.5.5 0 00.708-.708l-2-2a.5.5 0 00-.708 0l-2 2a.5.5 0 000 .708z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8 12a.5.5 0 00.5-.5v-4a.5.5 0 00-1 0v4a.5.5 0 00.5.5z" clip-rule="evenodd"/>
+                      </svg>
+                    </button>
+                     <button type="button" onclick="location.href='{% url 'block_one' %}'" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z" clip-rule="evenodd"/>
+                      </svg>
+                    </button>
+                     <button type="button" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-lock" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M11.5 8h-7a1 1 0 00-1 1v5a1 1 0 001 1h7a1 1 0 001-1V9a1 1 0 00-1-1zm-7-1a2 2 0 00-2 2v5a2 2 0 002 2h7a2 2 0 002-2V9a2 2 0 00-2-2h-7zm0-3a3.5 3.5 0 117 0v3h-1V4a2.5 2.5 0 00-5 0v3h-1V4z" clip-rule="evenodd"/>
+                    </svg>
+                    </button>
+                   </div>
+                   <small class="text-muted">9 mins</small>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+               <img class="card-img-top" src="{%static 'images/blocks.jpeg'%}" alt="Card image cap">
+              <div class="card-body">
+                 <p class="card-text">Block 2: Save at least a minimum of 10% everything that you earn.  You earned it - you deserve it!</p>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+                     <button type="button" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-file-earmark-arrow-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 1h5v1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6h1v7a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2z"/>
+                        <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 019 4.5z"/>
+                        <path fill-rule="evenodd" d="M5.646 8.854a.5.5 0 00.708 0L8 7.207l1.646 1.647a.5.5 0 00.708-.708l-2-2a.5.5 0 00-.708 0l-2 2a.5.5 0 000 .708z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8 12a.5.5 0 00.5-.5v-4a.5.5 0 00-1 0v4a.5.5 0 00.5.5z" clip-rule="evenodd"/>
+                      </svg>
+                    </button>
+                     <button type="button" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z" clip-rule="evenodd"/>
+                      </svg></button>
+                     <button type="button" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-lock" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M11.5 8h-7a1 1 0 00-1 1v5a1 1 0 001 1h7a1 1 0 001-1V9a1 1 0 00-1-1zm-7-1a2 2 0 00-2 2v5a2 2 0 002 2h7a2 2 0 002-2V9a2 2 0 00-2-2h-7zm0-3a3.5 3.5 0 117 0v3h-1V4a2.5 2.5 0 00-5 0v3h-1V4z" clip-rule="evenodd"/>
+                    </svg>
+                    </button>
+                   </div>
+                   <small class="text-muted">9 mins</small>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="col-md-4">
+             <div class="card mb-4 box-shadow">
+               <img class="card-img-top" src="{%static 'images/blocks.jpeg'%}" alt="Card image cap">
+              <div class="card-body">
+                 <p class="card-text">Block 3: Stocks, bonds, & mutual funds.  If you're not Warren Buffet, this is most likely not your arena.</p>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+                     <button type="button" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-file-earmark-arrow-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 1h5v1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6h1v7a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2z"/>
+                        <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 019 4.5z"/>
+                        <path fill-rule="evenodd" d="M5.646 8.854a.5.5 0 00.708 0L8 7.207l1.646 1.647a.5.5 0 00.708-.708l-2-2a.5.5 0 00-.708 0l-2 2a.5.5 0 000 .708z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8 12a.5.5 0 00.5-.5v-4a.5.5 0 00-1 0v4a.5.5 0 00.5.5z" clip-rule="evenodd"/>
+                      </svg>
+                    </button>
+                     <button type="button" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z" clip-rule="evenodd"/>
+                      </svg></button>
+                     <button type="button" class="btn btn-sm btn-outline-secondary"><svg class="bi bi-lock" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M11.5 8h-7a1 1 0 00-1 1v5a1 1 0 001 1h7a1 1 0 001-1V9a1 1 0 00-1-1zm-7-1a2 2 0 00-2 2v5a2 2 0 002 2h7a2 2 0 002-2V9a2 2 0 00-2-2h-7zm0-3a3.5 3.5 0 117 0v3h-1V4a2.5 2.5 0 00-5 0v3h-1V4z" clip-rule="evenodd"/>
+                    </svg>
+                   </button>
+                   </div>
+                   <small class="text-muted">9 mins</small>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+
+         </div>
+       </div>
+     </div>
+
+
+<script>
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap4'
+    });
+</script>
+{%endblock content%}
