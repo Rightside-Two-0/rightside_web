@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'users',
     'pages',
     'blockchain',
-    'crypto',
     'skills',
     'steps'
 ]
