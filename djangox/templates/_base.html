@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<title>{% block title %}Rightside{% endblock title %}</title>
+<title>{% block title %}Rightside Two.0{% endblock title %}</title>
 <meta name="description" content="A framework for launching new Django projects quickly.">
 <meta name="author" content="Philip Caputo: Two.0">
 
@@ -48,7 +48,7 @@ body {
 </style>
 </head>
 
-<body>
+<body class="bg-secondary">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-4">
       <a class="navbar-brand" href="{% url 'home' %}">Rightside</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +61,7 @@ body {
         <a class="btn btn-outline-primary nav-link mr-2" href="#">Free Skills!</a>
         <a class="btn btn-outline-success nav-link dropdown-toggle mr-2" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">12-Steps<span class="sr-only">(current)</span></a>
         <div class="nav-item dropdown">
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <div class="dropdown-menu bg-secondary" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="{%url 'block_one'%}">Step <span class="badge badge-success">1</span>: Job (Skills)</a>
             <a class="dropdown-item" href="#">Step 2: Savings (Your worth it)</a>
             <a class="dropdown-item" href="#">Step 3: Golg/Silver/Bitcoin</a>
@@ -74,6 +74,19 @@ body {
             <a class="dropdown-item" href="#">Step 10: Analyze Investment Property</a>
             <a class="dropdown-item" href="#">Step 11: Entities & Taxes</a>
             <a class="dropdown-item" href="#">Step 12: Philanthropy</a>
+          </div>
+        </div>
+        <div class="btn-group">
+          <a class="btn btn-outline-danger dropdown-toggle mr-2 p-2" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">6 Ghosts of Fear</a>
+          <div class="nav-item dropdown">
+            <div class="dropdown-menu bg-secondary" aria-labelledby="dropdown02">
+              <a class="dropdown-item" href="#">Ghost <span class="badge badge-danger">1</span>: Poverty</a>
+              <a class="dropdown-item" href="#">Ghost 2: Criticism</a>
+              <a class="dropdown-item" href="#">Ghost 3: Ill-Health</a>
+              <a class="dropdown-item" href="#">Ghost 4: Loss of a Loved One</a>
+              <a class="dropdown-item" href="#">Ghost 5: Old Age</a>
+              <a class="dropdown-item" href="#">Ghost 6: Death</a>
+            </div>
           </div>
         </div>
         {% if user.is_authenticated %}

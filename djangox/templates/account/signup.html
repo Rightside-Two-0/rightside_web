@@ -1,15 +1,101 @@
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
-
-{% block title %}Create Profile{% endblock %}
+{%load socialaccount%}
+{%providers_media_js%}
+{% block title %}Sign up{% endblock %}
 
 {% block content %}
-<h2>Create a Profile</h2>
-<form class="mt-5" method="post">
+<style media="screen">
+  .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  .divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+  }
+</style>
+<div class="container">
+  <div class="card bg-dark text-white">
+  <article class="card-body mx-auto" style="max-width: 400px;">
+  	<h4 class="card-title mt-3 text-center">Create Account</h4>
+  	<p class="text-center">Get started with your free account</p>
+  	<div class="text-center">
+      <a href="{%provider_login_url 'facebook' method='js_sdk'%}" class="btn btn-outline-primary pl-2 pr-2 ml-1"> <i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="" class="btn btn-outline-info pl-2 pr-2 ml-1"> <i class="fab fa-twitter"></i></a>
+      <a href="" class="btn btn-outline-warning pl-2 pr-2 ml-1"> <i class="fab fa-instagram"></i></a> -->
+      <a href="{%provider_login_url 'github' method='js_sdk'%}" class="btn btn-outline-secondary pl-2 pr-2 ml-1"> <i class="fab fa-github"></i></a>
+      <a href="{%provider_login_url 'google' method='js_sdk'%}" class="btn btn-outline-danger pl-2 pr-2 ml-1"> <i class="fab fa-google"></i></a>
+      <!-- <a href="" class="btn btn-outline-primary pl-2 pr-2 ml-1"> <i class="fab fa-linkedin"></i></a> -->
+    </div>
+  	<p class="divider-text">
+          <span class="bg-dark">OR</span>
+      </p>
+  	<form method="post" action="{%url 'account_signup'%}">
+      {% csrf_token %}
+  	<div class="form-group input-group">
+  		<div class="input-group-prepend">
+  		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+  		 </div>
+          <input name="first_name" class="form-control" placeholder="First name" type="text">
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+    		<div class="input-group-prepend">
+    		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+    		 </div>
+            <input name="last_name" class="form-control" placeholder="Last name" type="text">
+        </div> <!-- form-group// -->
+      <div class="form-group input-group">
+      	<div class="input-group-prepend">
+  		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+  		 </div>
+          <input name="email" class="form-control" placeholder="Email address" type="email">
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+      	<div class="input-group-prepend">
+  		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+  		</div>
+      	<input name="phone" class="form-control" placeholder="Phone number" type="text">
+      </div>
+      <div class="form-group input-group">
+      	<div class="input-group-prepend">
+  		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+  		</div>
+          <input name="password1" class="form-control" placeholder="Create password" type="password">
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+      	<div class="input-group-prepend">
+  		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+  		</div>
+          <input name="password2" class="form-control" placeholder="Repeat password" type="password">
+      </div> <!-- form-group// -->
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+      </div> <!-- form-group// -->
+      <p class="text-center">Have an account? <a href="{%url 'account_login'%}">Log In</a> </p>
+  </form>
+  </article>
+  </div> <!-- card.// -->
+</div>
+
+
+
+<!-- <form method="post" class="col-3">
   {% csrf_token %}
-  <div class="col-md-3">
-    {{ form|crispy }}
-  </div>
-  <button class="btn btn-success ml-3" type="submit">Create Now</button>
-</form>
+  {{ form|crispy }}
+  <button class="btn btn-success" type="submit">Sign up</button>
+</form> -->
 {% endblock content %}
