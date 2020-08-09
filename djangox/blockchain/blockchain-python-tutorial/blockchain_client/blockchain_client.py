@@ -2,7 +2,7 @@
 title           : blockchain_client.py
 description     : A blockchain client implemenation, with the following features
                   - Wallets generation using Public/Private key encryption (based on RSA algorithm)
-                  - Generation of transactions with RSA encryption      
+                  - Generation of transactions with RSA encryption
 author          : Adil Moujahid
 date_created    : 20180212
 date_modified   : 20180309
@@ -16,15 +16,12 @@ References      : [1] https://github.com/julienr/ipynb_playground/blob/master/bi
 '''
 
 from collections import OrderedDict
-
 import binascii
-
 import Crypto
 import Crypto.Random
 from Crypto.Hash import SHA
 from Crypto.PublicKey import RSA
 from Crypto.Signature import PKCS1_v1_5
-
 import requests
 from flask import Flask, jsonify, request, render_template
 
@@ -84,7 +81,7 @@ def new_wallet():
 
 @app.route('/generate/transaction', methods=['POST'])
 def generate_transaction():
-	
+
 	sender_address = request.form['sender_address']
 	sender_private_key = request.form['sender_private_key']
 	recipient_address = request.form['recipient_address']
