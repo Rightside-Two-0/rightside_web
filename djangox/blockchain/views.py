@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from .models import Transaction
 from . import views
 from .forms import TransactionForm
-from blockchain import blockchain
+# from blockchain import blockchain
 from hashlib import sha256
 import json
 import time, requests
@@ -51,7 +51,7 @@ def sign_Transaction(request):
                         notes = notes)
                         #
         finger_print = sha256(str(datetime.datetime.now()).encode('utf-8')+str(date).encode('utf-8')+str(from_account).encode('utf-8')+str(to_account).encode('utf-8')+str(amount).encode('utf-8')+str(notes).encode('utf-8')).hexdigest()
-    
+
     context = {'fingerprint':finger_print}
     return render(request, 'pages/blockchain.html', context)
 
