@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Wallet Generator
+              <a class="nav-link" href="/">Create Account
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -51,9 +51,9 @@
 
 
           <div class="card-body">
-            <h4 class="card-title">Wallet Generator</h4>
-            <p class="card-text">Click on the button below to generate your blockchain wallet</p>
-            <input type="button" class="btn btn-primary btn-lg" value="Generate Wallet">
+            <h4 class="card-title">Create Account</h4>
+            <p class="card-text">Click on the button below to create your blockchain account</p>
+            <input type="button" class="btn btn-primary btn-lg" value="Create Account">
           </div>
 
         </div>
@@ -65,16 +65,16 @@
     <div class="container">
 
         <div class="row">
-          <label class="col-sm-2">Public Key:</label>
+          <label class="col-sm-2">Account:</label>
           <div class="col-sm-10">
             <textarea id="public_key" rows="5" class="form-control" readonly></textarea>
           </div>
         </div>
 
         <br>
-        
+
         <div class="row">
-          <label class="col-sm-2">Private Key:</label>
+          <label class="col-sm-2">Secret Password:</label>
           <div class="col-sm-10">
             <textarea id="private_key" rows="5" class="form-control" readonly></textarea>
           </div>
@@ -87,9 +87,9 @@
             <div class="alert alert-danger" role="alert">
               IMPORTANT
               <ul>
-                <li>Save you private and public keys. These keys cannot be recovered!</li>
-                <li>Don't share your private key with anyone!</li>
-              </ul> 
+                <li>Save these details. These account detials cannot be recovered!</li>
+                <li>Don't share your secret password with anyone!</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@
         $('input').click(function(){
 
           $.ajax({
-            url: '/wallet/new',
+            url: '/account/new',
             type: 'GET',
             success: function(response){
               document.getElementById("private_key").innerHTML = response['private_key'];

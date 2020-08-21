@@ -43,9 +43,14 @@ class Blockchain:
         self.chain = []
         self.nodes = set()
         #Generate random number to be used as node_id
-        self.node_id = str(uuid4()).replace('-', '')
+        self.node_id = self.get_pub_key()
         #Create genesis block
         self.create_block(0, '00')
+    def get_pub_key(self):
+        keys = []
+        with open('../blockchain_client/blockchain_account_Thu Aug 20 11:39:45 2020','r') as file:
+            keys = file.readlines()
+        return keys[0][9:]
     def register_node(self, node_url):
         """
         Add a new node to the list of nodes
